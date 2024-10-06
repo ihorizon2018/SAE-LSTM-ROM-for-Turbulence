@@ -13,7 +13,7 @@ This is the code base for SAE-LSTM. [Nonlinear model order reduction of engineer
 - [Install](#install)
 - [Modelling](#Model-training)
 - [License](#license)
-
+- [Methodology](#methodology)
 
 ## Background
 
@@ -50,12 +50,13 @@ Details can be seen in the 'Case1_SAE&LSTM.ipynb
 **Case 2: Turbulent river flow passing around multiple bridge pillars**  
 Details can be seen in the 'Case2_SAE&LSTM.ipynb'
 
+**Outputs
+Plot the result in figure and output the prediction value back to the snapshots. These functions are placed in the './dmd_machine' directory.
+
 ## Methodology
 More details can be found in the 'Paper.pdf'
 [Nonlinear model order reduction of engineering turbulence using data-assisted neural networks]
 
-**Outputs
-Plot the result in figure and output the prediction value back to the snapshots. These functions are placed in the './dmd_machine' directory.
 ## License
 GNU General Public License v3.0
 
