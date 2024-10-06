@@ -11,7 +11,7 @@ This is the code base for SAE-LSTM. [Nonlinear model order reduction of engineer
 - [Background](#background)
 - [Data](#data)
 - [Install](#install)
-- [Modelling](#train-models and outputs)
+- [Modelling](#Model-training)
 - [License](#license)
 
 
