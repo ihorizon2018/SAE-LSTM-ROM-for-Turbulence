@@ -20,13 +20,13 @@ This is the code base for SAE-LSTM. [Nonlinear model order reduction of engineer
 Conducting repeated high-fidelity simulations of complex turbulent flows entails substantial computational costs in engineering applications. Reduced-order modeling (ROM) seeks to derive low-dimensional representations from full-order numerical systems, thereby facilitating rapid forecasting of future flow states. This study presents a novel data-assisted framework that employs deep neural networks for nonlinear ROM of engineering turbulent flows. Specifically, the Stacked Auto-Encoder (SAE) network is utilized for nonlinear dimensionality reduction and feature extraction; the resulting latent features subsequently serve as inputs to the Long Short-Term Memory (LSTM) network for predictive ROM of turbulent fluid dynamics. A comparative analysis is conducted between SAE and proper orthogonal decomposition regarding dimensionality reduction, and the performance of LSTM in time series forecasting is also evaluated against dynamic mode decomposition, where two different training strategies are applied for LSTM within the reduced-order latent space. The proposed SAE-LSTM-based ROM approach is tested on two typical turbulent flow problems for non-intrusive model order reduction. The results demonstrate that the constructed surrogate models possess significant capability in predicting the evolution of turbulent flows by preserving essential nonlinear characteristics inherent in fluid dynamics. This innovative method shows great promise in addressing computational challenges associated with high-resolution numerical modeling applied to complex large-scale flow problems.
 
 ## Data
-In case 1, the open-source solver Fluidity is employed to build the computational fluid dynamics (CFD) model utilizing large eddy simulation techniques.
-In case 2, the open-source solver OpenFoam is employed to numerically simulate the turbulent river flow around these two bridge pillars.
+In Case 1, the open-source solver Fluidity is employed to build the computational fluid dynamics (CFD) model utilizing large eddy simulation techniques.
+In Case 2, the open-source solver OpenFoam is employed to numerically simulate the turbulent river flow around these two bridge pillars.
 The velocity value of snapshots in two cases have been read and save in .pkl and .npy format. You can find them in the './data' directory.
 
 ## Install
 ### Environment
-create a new virtual environment and establish the libraries in this new environment.  
+Create a new virtual environment and establish the libraries in this new environment.  
 **Conda**  
 *Create a new virtual environemnt called 'venv_ROM' with python3 for this project.*
 ```
