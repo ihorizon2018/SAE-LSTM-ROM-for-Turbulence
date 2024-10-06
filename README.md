@@ -50,6 +50,10 @@ Details can be seen in the 'Case1_SAE&LSTM.ipynb
 **Case 2: Turbulent river flow passing around multiple bridge pillars**  
 Details can be seen in the 'Case2_SAE&LSTM.ipynb'
 
+## Methodology
+More details can be found in the 'Paper.pdf'
+[Nonlinear model order reduction of engineering turbulence using data-assisted neural networks]
+
 **Outputs
 Plot the result in figure and output the prediction value back to the snapshots. These functions are placed in the './dmd_machine' directory.
 ## License
