@@ -43,7 +43,7 @@ mv dmd_machine/vtktools.py ***/venv_ROM/lib/python3.6/site-packages/
 pip install -r dmd_machine/requirements.txt  
 ```
 
-## Train-models and Outputs
+## Modelling
 **Case 1: Turbulent flow passing around a circular cylinder**  
 Details can be seen in the 'Case1_SAE&LSTM.ipynb
 
