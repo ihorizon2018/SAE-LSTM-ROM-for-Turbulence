@@ -12,8 +12,9 @@ Nonlinear model order reduction of engineering turbulence using data-assisted ne
 - [Data](#data)
 - [Install](#install)
 - [Modelling](#Model-training)
-- [License](#license)
 - [Methodology](#methodology)
+- [License](#license)
+
 
 ## Background
 
