@@ -695,7 +695,7 @@ def transform_vector(data, num, originalFolder, destinationFolder, fileName, fie
         data=np.concatenate((data,w_zero), axis = 2)
         # print(data.shape)
     i = 0
-    for i in range(num-1):
+    for i in range(num):
 
         f_filename = destinationFolder + fileName + str(i)+ ".vtu"
         f_file = vtktools.vtu(f_filename)
@@ -715,49 +715,6 @@ def transform_vector(data, num, originalFolder, destinationFolder, fileName, fie
         f_file.Write(f_filename)
 
     print('transform succeed')
-
-def transform_vector_vtk(data, num, originalFolder, destinationFolder, fileName, fieldName):
-
-    folder = os.path.exists(destinationFolder)
-
-    if not folder: 
-        print('start to create the destination folder')   
-        os.makedirs(destinationFolder)       
-        #copyFiles(originalFolder,destinationFolder) 
-
-    print('start to store data as a new variable')
-    #if len(data.shape) == 3:
-        #w_zero = np.zeros((data.shape[0], data.shape[1],1))
-        # print(w_zero.shape)
-        #data=np.concatenate((data,w_zero), axis = 2)
-        # print(data.shape)
-    i = 0
-    for i in range(num):
-        f_filename = originalFolder + fileName + str(i)+ ".vtk"
-        new_filename = destinationFolder + fileName + str(i)+ ".vtk"
-        
-        
-        reader = vtk.vtkPolyDataReader()
-        reader.SetFileName(f_filename)
-        reader.ReadAllScalarsOn()
-        reader.ReadAllVectorsOn()
-        reader.Update()
-
-        f_file= reader.GetOutput()
-        
-        velParam_vtk = numpy_to_vtk(data[i])
-        velParam_vtk.SetName(fieldName) #rememebr to give an unique name
-        f_file.GetPointData().AddArray(velParam_vtk)
-        
-        writer = vtk.vtkPolyDataWriter()
-        writer.SetFileVersion(42)
-        writer.SetFileName(new_filename)  
-        writer.SetInputData(f_file)
-        #writer.Write()
-        writer.Update()
-
-    print('transform succeed')
-
 
 # Check for Inf or -Inf and replace them with NaN
 def replace_inf_with_nan(data):
@@ -779,10 +736,10 @@ def cc9(ori_data, rom_data_0, rom_data_1, rom_data_2, rom_data_3,rom_data_4, rom
             print('the dimension is equal 3.')            
 
         elif rom_data_0.ndim == 2:
-            # Original array (true data) 
+            # Original array
             original = np.transpose(ori_data)
 
-            num_signals = ori_data.shape[0]  # Number of signals
+            num_signals = ori_data.shape[0]  # Number of snapshots
             time_series_length = ori_data.shape[0]  # Length of the time series
 
             # Predicted arrays (simulated predictions) - all have the same shape as the original
